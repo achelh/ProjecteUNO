@@ -10,10 +10,10 @@ import java.util.Scanner;
 public class UI {
     private static Scanner input = new Scanner(System.in);
     // ANSI escape codes 
-    public static final String RESET = "\u001B[0m"; 
-    public static final String RED = "\u001B[31m"; 
-    public static final String GREEN = "\u001B[32m"; 
-    public static final String YELLOW = "\u001B[33m"; 
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
     public static final String BLUE = "\u001B[34m";
 
     private static final int ALTURA_CARTA = 7;
@@ -156,9 +156,16 @@ public class UI {
 
     public static Carta demanarCarta(Jugador jugador, Pilo pilo) {
         mostrarMa(jugador);
+
+        System.out.println("0 - PASSAR TURNO");
+
         do {
             System.out.print("Escull una carta: ");
             int indexCartaEscollida = input.nextInt();
+
+            if (indexCartaEscollida == 0) {
+                return null;
+            }
 
             if (indexCartaEscollida > 0 && indexCartaEscollida <= jugador.nombreDeCartes()) {
                 Carta cartaEscollida = jugador.getCartes().get(indexCartaEscollida-1);

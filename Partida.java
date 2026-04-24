@@ -65,6 +65,10 @@ public class Partida {
             }
         }
         Carta cartaTirada = UI.demanarCarta(jugadorActiu, pilo);
+        if (cartaTirada == null) {
+            ordreJugadors.passarTorn();
+            return false;
+        }
         jugadorActiu.tirarCarta(cartaTirada,pilo);
 
         if (jugadorActiu.nombreDeCartes() <= 0) {
