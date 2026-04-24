@@ -157,7 +157,7 @@ public class UI {
     public static Carta demanarCarta(Jugador jugador, Pilo pilo) {
         mostrarMa(jugador);
 
-        System.out.println("0 - PASSAR TURNO");
+        System.out.println("0 - PASSAR TORN");
 
         do {
             System.out.print("Escull una carta: ");
